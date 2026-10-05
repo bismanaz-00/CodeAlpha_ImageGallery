@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A premium dark-themed photo gallery with filters and a lightbox viewer." />
+  <title>Photo Gallery | CodeAlpha Internship</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Animated background glow -->
+  <div class="bg-glow bg-glow--one" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--two" aria-hidden="true"></div>
+
+  <!-- ===== HEADER / HERO ===== -->
+  <header class="hero">
+    <p class="hero__eyebrow">Explore &bull; Discover &bull; Inspire</p>
+    <h1 class="hero__title">PHOTO <span>GALLERY</span></h1>
+    <p class="hero__subtitle">Discover moments captured through a different lens.</p>
+    <div class="hero__line" aria-hidden="true"></div>
+  </header>
+
+  <main class="container">
+    <!-- ===== CATEGORY FILTERS ===== -->
+    <nav class="filters" aria-label="Filter photos by category">
+      <button class="filter-btn is-active" data-filter="all" aria-pressed="true">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        All
+      </button>
+      <button class="filter-btn" data-filter="Nature" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c0-9 6-14 15-14 0 9-5 15-14 15"/><path d="M5 19c3-5 6-8 10-10"/></svg>
+        Nature
+      </button>
+      <button class="filter-btn" data-filter="Architecture" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V8l7-4v17M11 21V10l9 3v8M3 21h18M7 11h1M7 15h1M15 15h1M15 18h1"/></svg>
+        Architecture
+      </button>
+      <button class="filter-btn" data-filter="Travel" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3 3 10l7 3 3 7z"/><path d="m10 13 11-10"/></svg>
+        Travel
+      </button>
+      <button class="filter-btn" data-filter="Animals" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="10" r="2"/><circle cx="10" cy="5.5" r="2"/><circle cx="15" cy="5.5" r="2"/><circle cx="19" cy="10" r="2"/><path d="M12 12c-3 0-6 3-6 6 0 2 2 2.5 4 2 1.2-.4 2.8-.4 4 0 2 .5 4 0 4-2 0-3-3-6-6-6z"/></svg>
+        Animals
+      </button>
+    </nav>
+
+    <!-- ===== IMAGE GALLERY ===== -->
+    <section class="gallery" id="gallery" aria-label="Photo gallery">
+
+      <article class="card" data-category="Nature" data-title="Mountain Lake" data-desc="A breathtaking view of snow-capped mountains and a serene lake, capturing the true beauty of nature.">
+        <button class="card__btn" aria-label="View Mountain Lake, Nature">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=80" alt="Snow-capped mountains reflected in a calm turquoise lake" loading="lazy" />
+          <span class="card__tag">Nature</span>
+          <span class="card__overlay"><span class="card__title">Mountain Lake</span><span class="card__view" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></span></span>
+        </button>
+      </article>
+
+      <article class="card" data-category="Architecture" data-title="Modern Architecture" data-desc="Bold geometric lines and glass facades glowing against a warm evening sky.">
+        <button class="card__btn" aria-label="View Modern Architecture, Architecture">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80" alt="Modern glass office building seen from below" loading="lazy" />
+          <span class="card__tag">Architecture</span>
+          <span class="card__overlay"><span class="card__title">Modern Architecture</span><span class="card__view" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></span></span>
+        </button>
+      </article>
+
+      <article class="card" data-category="Travel" data-title="Cityscape View" data-desc="Golden light settles over a historic canal city as boats drift through the water.">
+        <button class="card__btn" aria-label="View Cityscape View, Travel">
+          <img src="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=1200&q=80" alt="Venice canal with historic buildings at sunset" loading="lazy" />
+          <span class="card__tag">Travel</span>
+          <span class="card__overlay"><span class="card__title">Cityscape View</span><span class="card__view" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></span></span>
+        </button>
+      </article>
+
+      <article class="card" data-category="Animals" data-title="Wild Deer" data-desc="A graceful deer pauses in a quiet forest, framed by soft light and tall trees.">
+        <button class="card__btn" aria-label="View Wild Deer, Animals">
+          <img src="https://images.unsplash.com/photo-1484406566174-9da000fda645?auto=format&fit=crop&w=1200&q=80" alt="A deer standing in a misty forest" loading="lazy" />
+          <span class="card__tag">Animals</span>
+          <span class="card__overlay"><span class="card__title">Wild Deer</span><span class="card__view" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></span></span>
+        </button>
+      </article>
+
+      <article class="card" data-category="Travel" data-title="Tropical Paradise" data-desc="Crystal-clear water, limestone cliffs and a wooden boat make the perfect island escape.">
+        <button class="card__btn" aria-label="View Tropical Paradise, Travel">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" alt="Tropical beach with turquoise water and blue sky" loading="lazy" />
+          <span class="card__tag">Travel</span>
+          <span class="card__overlay"><span class="card__title">Tropical Paradise</span><span class="card__view" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></span></span>
+        </button>
+      </article>
+
+      <article class="card" data-category="Nature" data-title="Waterfall Beauty" data-desc="A silky waterfall tumbles through lush green forest, alive with mist and movement.">
+        <button class="card__btn" aria-label="View Waterfall Beauty, Nature">
+          <img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&q=80" alt="Waterfall cascading through green forest" loading="lazy" />
+          <span class="card__tag">Nature</span>
+          <span class="card__overlay"><span class="card__title">Waterfall Beauty</span><span class="card__view" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></span></span>
+        </button>
+      </article>
+
+      <article class="card" data-category="Animals" data-title="Cute Puppy" data-desc="A golden puppy gazes into the lens with endless curiosity and warmth.">
+        <button class="card__btn" aria-label="View Cute Puppy, Animals">
+          <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=80" alt="Golden retriever puppy looking at the camera" loading="lazy" />
+          <span class="card__tag">Animals</span>
+          <span class="card__overlay"><span class="card__title">Cute Puppy</span><span class="card__view" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></span></span>
+        </button>
+      </article>
+
+      <article class="card" data-category="Architecture" data-title="Historic Monument" data-desc="A timeless landmark glowing in the last light of day, rich with history.">
+        <button class="card__btn" aria-label="View Historic Monument, Architecture">
+          <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=80" alt="Historic white marble monument with reflecting pool" loading="lazy" />
+          <span class="card__tag">Architecture</span>
+          <span class="card__overlay"><span class="card__title">Historic Monument</span><span class="card__view" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></span></span>
+        </button>
+      </article>
+
+      <article class="card" data-category="Nature" data-title="Cherry Blossoms" data-desc="Pink blossoms frame a distant snowy peak in a calm spring scene.">
+        <button class="card__btn" aria-label="View Cherry Blossoms, Nature">
+          <img src="https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=1200&q=80" alt="Cherry blossom branches with a mountain in the background" loading="lazy" />
+          <span class="card__tag">Nature</span>
+          <span class="card__overlay"><span class="card__title">Cherry Blossoms</span><span class="card__view" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></span></span>
+        </button>
+      </article>
+
+      <article class="card" data-category="Travel" data-title="Coastal Road" data-desc="A winding road hugs the cliffside, inviting you to keep driving toward the horizon.">
+        <button class="card__btn" aria-label="View Coastal Road, Travel">
+          <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80" alt="Winding road through mountains at sunset" loading="lazy" />
+          <span class="card__tag">Travel</span>
+          <span class="card__overlay"><span class="card__title">Coastal Road</span><span class="card__view" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></span></span>
+        </button>
+      </article>
+
+      <article class="card" data-category="Architecture" data-title="Glass Tower" data-desc="Reflective glass and steel climb into a deep dusk sky.">
+        <button class="card__btn" aria-label="View Glass Tower, Architecture">
+          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80" alt="Tall glass skyscraper against the sky" loading="lazy" />
+          <span class="card__tag">Architecture</span>
+          <span class="card__overlay"><span class="card__title">Glass Tower</span><span class="card__view" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></span></span>
+        </button>
+      </article>
+
+      <article class="card" data-category="Animals" data-title="Colorful Parrot" data-desc="A vivid macaw shows off brilliant blue and gold feathers against soft green.">
+        <button class="card__btn" aria-label="View Colorful Parrot, Animals">
+          <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=1200&q=80" alt="Blue and yellow macaw parrot close-up" loading="lazy" />
+          <span class="card__tag">Animals</span>
+          <span class="card__overlay"><span class="card__title">Colorful Parrot</span><span class="card__view" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></span></span>
+        </button>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>Designed &amp; Developed by <strong>Bisma Naz</strong> &bull; CodeAlpha Internship</p>
+  </footer>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true">
+    <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous image">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg>
+    </button>
+
+    <div class="lb-panel">
+      <button class="lb-btn lb-close" id="lbClose" aria-label="Close viewer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+      <figure class="lb-figure">
+        <img id="lbImage" src="" alt="" />
+      </figure>
+      <div class="lb-info">
+        <span class="lb-counter" id="lbCounter">01 / 12</span>
+        <h2 class="lb-title" id="lbTitle">Title</h2>
+        <span class="lb-category" id="lbCategory">Category</span>
+        <p class="lb-desc" id="lbDesc"></p>
+      </div>
+    </div>
+
+    <button class="lb-btn lb-next" id="lbNext" aria-label="Next image">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+    </button>
+  </div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
